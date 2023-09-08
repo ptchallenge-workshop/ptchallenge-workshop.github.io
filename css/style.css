@@ -19,6 +19,11 @@ video {
     height: auto;
 }
 
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 /*Mine*/
 ul {
   margin-top: -10px;
@@ -185,18 +190,12 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   height: 20vh;
   position: relative;
-  opacity: 1;
 }
 
-@media (min-width: 1024px) {
-  #hero {
-    background-attachment: fixed;
-  }
-}
+
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.6);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -223,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
-  color: #fff;
+  color: #000000;
 }
 
 @media (max-width: 768px) {
@@ -234,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h2 {
-  color: #eee;
+  color: #000000;
   margin-bottom: 50px;
   font-size: 28px; /*24px;*/
 }
@@ -243,7 +242,6 @@ h1, h2, h3, h4, h5, h6 {
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
-    margin-bottom: 30px;
   }
 }
 
@@ -254,18 +252,13 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 16px;
   letter-spacing: 1px;
   display: inline-block;
-  padding: 8px 28px;
-  border-radius: 50px;
+
   transition: 0.5s;
   margin: 10px;
   border: 2px solid #fff;
   color: #fff;
 }
 
-#hero .btn-get-started:hover {
-  background: #2dc997;
-  border: 2px solid #2dc997;
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -328,7 +321,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Nav Meu Container */
 #nav-menu-container {
-  float: right;
+  float: left;
+  margin: 0;
+}
+
+#nav-menu-container-2 {
+  float: none;
   margin: 0;
 }
 
@@ -343,7 +341,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 8px 10px 8px;
   text-decoration: none;
   display: inline-block;
-  color: #fff;
+  color: #000000;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
@@ -362,7 +360,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000000;
+  background-color: #ffff;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -382,7 +380,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu ul li {
-  background: #fff;
+  background: #ffff;
 }
 
 .nav-menu ul li:first-child {
@@ -391,7 +389,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu ul li a {
   padding: 10px;
-  color: #333;
+  color: #ffff;
   transition: 0.3s;
   display: block;
   font-size: 13px;
@@ -525,17 +523,16 @@ body.mobile-nav-active #mobile-nav-toggle {
 --------------------------------*/
 .section-header .section-title {
   font-size: 32px;
-  color: #111;
+  color: #ffffff;
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
-  margin-bottom: 5px;
+
 }
 
 .section-header .section-description {
   text-align: center;
-  padding-bottom: 40px;
-  color: #999;
+  color: ##ffffff;
 }
 
 /* About Us Section
@@ -857,7 +854,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #team .member {
   text-align: center;
-  margin-bottom: 20px;
+
 }
 
 #team .member .pic {

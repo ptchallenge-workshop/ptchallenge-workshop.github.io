@@ -1,270 +1,316 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>The Perception Test Visualization</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Perception Test Dataset Explorer</title>
+<link rel="icon" href="brain_bg.jpg" type="image/x-icon">
+
+<style>
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fafafa;
+        color: #333;
+    }
+
+    h1 {
+        font-family: 'Lato', sans-serif;
+        text-align: center;
+        margin-top: 30px;
+        font-size: 36px;
+        color: #2c3e50;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    #videoPlayer {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+
+    .video-and-buttons, #questionsContainer {
+        flex: 1;
+        margin: 10px;
+        max-width: 50%;
+    }
+
+    #questionsContainer {
+        background-color: #ffffff;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        padding: 20px;
+        overflow-y: auto;
+    }
+
+		.tasks-container {
+		      text-align: left; /* Align the content to the left */
+		      margin-top: 20px;
+		      padding: 15px;
+		      background: #ecf0f1;
+		      border-radius: 10px;
+		      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+		  }
+
+		  .tasks-container label {
+		      display: inline-block;
+		      margin: 5px;
+		      padding: 8px 15px;
+		      background: #bdc3c7;
+		      border-radius: 6px;
+		      cursor: pointer;
+		      transition: background-color 0.3s;
+		  }
+
+
+    .tasks-container label:hover {
+        background-color: #95a5a6;
+    }
+
+		.tasks-container input[type="radio"] {
+				display: none; /* Hide the default radio button */
+		}
+
+		.tasks-container input[type="radio"] + label::before {
+				content: '';
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				margin-right: 10px;
+				background: white;
+				border: 2px solid #3498db;
+				border-radius: 50%; /* Make it circular for radio buttons */
+		}
+
+		.tasks-container input[type="radio"]:checked + label::before {
+				background-color: #3498db;
+		}
+
+    .button-row {
+        text-align: center;
+    }
+
+    button {
+        margin: 5px;
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+
+    .question {
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin-bottom: 5px;
+    }
+		.correct-answer {
+				font-weight: bold;
+				color: green;
+		}
+    @media screen and (max-width: 768px) {
+        .flex-container {
             flex-direction: column;
-            align-items: center;
-            justify-content: top;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            margin-top: 150px;
-        }
-        
-        .header {
-            background-color: #4285F4;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            font-size: 24px;
-            border-bottom: 2px solid #357ACD;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            margin-bottom: 50px;
-            border-radius: 8px; /* Rounded corners */
         }
 
-        .header h1 {
-            margin: 0;
+        #videoPlayer, #questionsContainer {
+            max-width: 100%;
         }
 
-        #video-container {
-            display: inline-block;
-            margin-bottom: 40px;
-        }
-
-				label[for="annotated-checkbox"] {
-    			margin-top: 10px; /* Add margin above the checkbox label */
-				}
-
-				button {
-						margin: 5px;
-						background-color: #4285F4;/* Peach color */
-						color: #ffffff;
-						border: none;
-						padding: 10px 20px;
-						border-radius: 8px; /* Rounded corners */
-						cursor: pointer;
-						transition: background-color 0.3s ease;
-						box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-				}
-
-				button:hover {
-						background-color: #FF1493; /* Slightly darker pink on hover */
-				}
-
-				#video {
-						width: 640px;
-						height: 360px;
-						background-color: #000;
-						border-radius: 8px; /* Rounded corners */
-						margin-bottom: 20px; /* Add margin to create space below the video */
-				}
-
-        .bold-question {
-            font-weight: bold;
-            font-size: 20px;
+        #questionsContainer {
             margin-top: 20px;
         }
-
-				#question-container {
-						background-color: #ffffff;
-						padding: 20px;
-						border-radius: 8px;
-						margin-top: 40px;
-						box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
-						text-align: left; /* Align text to the left */
-						width: 640px; /* Set a fixed width */
-						overflow-y: auto; /* Enable scrolling if content exceeds container height */
-				}
-								
-        #question-list {
-            max-height: 600px;
-            overflow-y: auto;
-        }
-        
-        h3 {
-            font-size: 24px;
-            color: #4285F4;
-        }
-        
-        h4 {
-            font-size: 16px;
-            color: #4285F4;
-            margin: 0;
-            text-align: center;
-            
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
-            margin-top: 10px;
-        }
-
-        #annotated-checkbox {
-            margin-top: 10px;
-        }
-
-        #annotated-checkbox[type="checkbox"] {
-            height: 20px;
-            width: 20px;
-        }
-
-        #annotated-checkbox:checked[type="checkbox"] {
-            background-color: #4285F4;
-        }
-        
-        #areas-container {
-            margin-top: 10px;
-        }
-        #reasonings-container {
-            margin-top: 10px;
-        }
-        #tasks-container {
-            margin-top: 10px;
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
-    <div class="header">
-        <h1>Explore The Perception Test dataset!</h1>
+
+<h1>The Perception Test Dataset Explorer</h1> <!-- Updated title styling -->
+
+
+<div class="flex-container">
+    <!-- New container for the video and buttons -->
+    <div class="video-and-buttons">
+        <!-- Video Player -->
+        <video id="videoPlayer" controls>
+            Your browser does not support the video tag.
+        </video>
+        
+        <div id="videoError" style="color: red; text-align: center;"></div>
+
+        
+        <!-- Buttons for Areas -->
+        <div class="button-row">
+    				<h3>Areas</h3>
+            <button onclick="loadRandomVideo('physics')">Physics</button>
+            <button onclick="loadRandomVideo('semantics')">Semantics</button>
+            <button onclick="loadRandomVideo('abstraction')">Abstraction</button>
+            <button onclick="loadRandomVideo('memory')">Memory</button>
+        </div>
+        
+        <!-- Buttons for Reasonings -->
+        <div class="button-row">
+    				<h3>Reasoning</h3>
+            <button onclick="loadRandomVideo('descriptive')">Descriptive</button>
+            <button onclick="loadRandomVideo('counterfactual')">Counterfactual</button>
+            <button onclick="loadRandomVideo('explanatory')">Explanatory</button>
+            <button onclick="loadRandomVideo('predictive')">Predictive</button>
+        </div>
+        
+				<!-- Checkboxes for Tasks -->
+			<div class="tasks-container">
+					<input type="radio" id="no-ann" name="tasks" value="no_ann">
+					<label for="no-ann">No Annotations</label><br>
+					
+					<input type="radio" id="object-tracking" name="tasks" value="object_tracking">
+					<label for="object-tracking">Object Tracks</label><br>
+					
+					<input type="radio" id="point-tracking" name="tasks" value="point_tracking">
+					<label for="point-tracking">Point Tracks</label><br>
+					
+					<input type="radio" id="action-localisation" name="tasks" value="action_localisation">
+					<label for="action-localisation">Actions</label><br>
+					
+					<input type="radio" id="sound-localisation" name="tasks" value="sound_localisation">
+					<label for="sound-localisation">Sounds</label>
+					
+			</div>
     </div>
-    <video id="video" controls autoplay poster="placeholder.jpg"></video>
-    <div id="areas-container">
-    		<h4>Areas of understanding</h4>
-        <!-- Buttons will be generated here -->
-    </div>
-    <div id="reasonings-container">
-    		<h4>Types of reasoning</h4>
-        <!-- Buttons will be generated here -->
-    </div>
-    <div id="tasks-container">
-    		<h4>Tasks</h4>
-        <!-- Buttons will be generated here -->
-    </div>
-    <label for="annotated-checkbox">Annotated:</label>
-    <input type="checkbox" id="annotated-checkbox">
-    <div id="question-container">
-        <h3>Questions:</h3>
-        <ul id="question-list">
-            <!-- Questions and options will be displayed here -->
-        </ul>
-    </div>
+
+
+		<!-- Questions Container -->
+		<div id="questionsContainer">
+				<h3>Questions</h3>
+				    
+				<div class="show-answers">
+						<input type="checkbox" id="showAnswersCheckbox">
+						<label for="showAnswersCheckbox">Show Answers</label>
+				</div>
+				<div id="questionsContent"> <!-- Container for the questions -->
+				    <!-- Questions will be loaded here -->
+				</div>
+		</div>
+</div>
+
 <script>
-    const areas = {'physics': ['video_5945', 'video_7461', 'video_7766', 'video_4166', 'video_11537'], 'semantics': ['video_7380', 'video_3521', 'video_1726', 'video_5698', 'video_10447'], 'abstraction': ['video_1860', 'video_678', 'video_5766', 'video_5364', 'video_11549'], 'memory': ['video_845', 'video_1428', 'video_4020', 'video_2719', 'video_4283']};
+// Video lists
 
-		const reasonings = {'descriptive': ['video_10762', 'video_2635', 'video_7561', 'video_10446', 'video_3290'], 'counterfactual': ['video_10761', 'video_687', 'video_4737', 'video_6338', 'video_9537'], 'explanatory': ['video_6317', 'video_7286', 'video_7082', 'video_11094', 'video_1678'], 'predictive': ['video_10167', 'video_2843', 'video_2027', 'video_1359', 'video_6914']};
-		
-		const tasks = {'object_tracking': ['video_3679', 'video_10368', 'video_4999', 'video_8119', 'video_9564'], 'point_tracking': ['video_10717', 'video_2810', 'video_5385', 'video_3885', 'video_6857'], 'action_localisation': ['video_6820', 'video_4057', 'video_2554', 'video_678', 'video_11358'], 'sound_localisation': ['video_4653', 'video_11051', 'video_1757', 'video_722', 'video_6303'], 'mc_question': ['video_11038', 'video_8644', 'video_7238', 'video_9987', 'video_5334'], 'grounded_question': ['video_7958', 'video_3616', 'video_4960', 'video_2688', 'video_6735']};
+const areas = {'physics': ['video_5945', 'video_7461', 'video_7766', 'video_4166', 'video_11537'], 'semantics': ['video_7380', 'video_3521', 'video_1726', 'video_5698', 'video_10447'], 'abstraction': ['video_1860', 'video_678', 'video_5766', 'video_5364', 'video_11549'], 'memory': ['video_845', 'video_1428', 'video_4020', 'video_2719', 'video_4283']};
+const reasonings = {'descriptive': ['video_10762', 'video_2635', 'video_7561', 'video_10446', 'video_3290'], 'counterfactual': ['video_10761', 'video_687', 'video_4737', 'video_6338', 'video_9537'], 'explanatory': ['video_6317', 'video_7286', 'video_7082', 'video_11094', 'video_1678'], 'predictive': ['video_10167', 'video_2843', 'video_2027', 'video_1359', 'video_6914']};
+// Fetch and store the questions from the JSON file
+let questionsData = {};
 
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    questionsData = data; // Store the questions in a global variable
+  })
+  .catch(error => console.error('Error loading questions:', error));
 
+// Function to toggle answer visibility
+function toggleAnswers() {
+    const showAnswers = document.getElementById('showAnswersCheckbox').checked;
+    const allOptions = document.querySelectorAll('.option');
 
-    const areasContainer = document.getElementById('areas-container');
-    const reasoningsContainer = document.getElementById('reasonings-container');
-    const tasksContainer = document.getElementById('tasks-container');
-    const sharedURL = 'https://storage.googleapis.com/dm-perception-test/visualisation_videos/';
-
-    const annotatedCheckbox = document.getElementById('annotated-checkbox');
-    const videoElement = document.getElementById('video');
-    const questionContainer = document.getElementById('question-container');
-    const questionList = document.getElementById('question-list');
-
-    // Generate buttons dynamically from the dictionary
-    for (const category in areas) {
-        const button = document.createElement('button');
-        button.textContent = category;
-        button.addEventListener('click', () => loadRandomVideo(category, areas));
-        areasContainer.appendChild(button);
-    }
-    
-    for (const category in reasonings) {
-        const button = document.createElement('button');
-        button.textContent = category;
-        button.addEventListener('click', () => loadRandomVideo(category, reasonings));
-        reasoningsContainer.appendChild(button);
-    }
-    
-    for (const category in tasks) {
-        const button = document.createElement('button');
-        button.textContent = category;
-        button.addEventListener('click', () => loadRandomVideo(category, tasks));
-        tasksContainer.appendChild(button);
-    }
-
-    function loadRandomVideo(category, cats) {
-        const videoIDs = cats[category];
-        const randomVideoID = videoIDs[Math.floor(Math.random() * videoIDs.length)];
-        let videoSource = sharedURL + randomVideoID;
-
-        if (annotatedCheckbox.checked) {
-            videoSource += '_annotated';
+    allOptions.forEach(option => {
+        const isCorrect = option.dataset.isCorrect === 'true';
+        if (showAnswers && isCorrect) {
+            option.classList.add('correct-answer');
+        } else {
+            option.classList.remove('correct-answer');
         }
+    });
+}
 
-        videoSource += '.mp4';
+document.querySelectorAll('.tasks-container input[type="radio"]').forEach(radio => {
+    radio.addEventListener('change', (event) => {
+        if (event.target.checked) {
+            loadRandomVideo(currentCategory, event.target.value);
+        }
+    });
+});
 
-        videoElement.src = videoSource;
-        videoElement.style.display = 'block';
+let currentCategory = null;
 
-        // Load and display questions for the selected video
-        loadQuestions(randomVideoID);
+function loadRandomVideo(category, task = 'no_ann') {
+    currentCategory = category; // Update the current category
+    // Choose a random video from the category
+    const videos = areas[category] || reasonings[category];
+    const videoId = videos[Math.floor(Math.random() * videos.length)];
+    
+    // Construct the video URL with annotation
+    let videoUrl = `https://storage.googleapis.com/dm-perception-test/visualisation_videos/${videoId}`;
+    if (task !== 'no_ann') {
+        videoUrl += `_${task}`;
     }
+    videoUrl += `.mp4`;
+    
+    const videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.src = videoUrl;
 
-		 function loadQuestions(videoID) {
-		  // Fetch and parse the JSON file containing questions and answers
-		  questionList.innerHTML = '';
-		  fetch('data.json')
-		      .then(response => {
-		          if (!response.ok) {
-		              throw new Error('Network response was not ok');
-		          }
-		          return response.json();
-		      })
-		      .then(data => {
-		          // Find the questions for the selected video
-		          const videoQuestions = data[videoID];
+    videoPlayer.onerror = () => {
+        // Fallback to the default video if the annotated version is not found
+        videoPlayer.src = `https://storage.googleapis.com/dm-perception-test/visualisation_videos/${videoId}.mp4`;
 
-		          if (videoQuestions) {
-		              // Display the questions in the question-container
-		              questionList.innerHTML = ''; // Clear existing questions
+        // Display an error message
+        const videoError = document.getElementById('videoError');
+        videoError.innerText = 'The selected annotations do not exist for this video. Showing the default video instead.';
+    };
 
-		              videoQuestions.forEach(questionObj => {
-		                  const questionItem = document.createElement('li');
-		                  questionItem.textContent = `Q${questionObj.id}: ${questionObj.question}`;
-		                  questionItem.classList.add('bold-question'); // Add the class
-		                  questionList.appendChild(questionItem);
+    videoPlayer.play();
 
-		                  // Display options
-		                  questionObj.options.forEach((option, index) => {
-		                      const optionItem = document.createElement('li');
-		                      optionItem.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
-		                      
-		                      // Highlight the correct answer in bold
-		                      if (index === questionObj.answer_id) {
-		                          optionItem.style.fontWeight = 'bold';
-		                          optionItem.style.color = 'green'; // Set the text color to green
-		                      }
+    // Clear previous questions
+    const questionsContent = document.getElementById('questionsContent');
+    questionsContent.innerHTML = '';
 
-		                      questionList.appendChild(optionItem);
-		                  });
-		              });
-		          } else {
-		              console.error(`No questions found for video ID: ${videoID}`);
-		          }
-		      })
-		      .catch(error => {
-		          console.error('Error loading JSON file:', error);
-		      });
-			}
+    // Load the questions for the selected video
+    const questions = questionsData[videoId];
+    if (questions) {
+        questions.forEach((question, index) => {
+            const questionElem = document.createElement('div');
+            questionElem.innerHTML = `
+                <p><strong>Question ${index + 1}:</strong> ${question.question}</p>
+                <ul>
+                    ${question.options.map((option, optionIndex) => 
+                        `<li class="option" data-is-correct="${optionIndex === question.answer_id}">
+                            Option ${String.fromCharCode(65 + optionIndex)}: ${option}
+                        </li>`).join('')}
+                </ul>
+                <p>Tags: ${question.tag.join(', ')}</p>
+            `;
+            questionsContent.appendChild(questionElem);
+        });
+    }
+    // Attach the event listener to the checkbox
+    document.getElementById('showAnswersCheckbox').addEventListener('change', toggleAnswers);
+
+    // Call toggleAnswers initially to ensure correct state
+    toggleAnswers();
+}
+
 </script>
 
-    </body>
+</body>
 </html>
+

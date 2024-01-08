@@ -51,14 +51,21 @@
         overflow-y: auto;
     }
 
-		.tasks-container {
-		      text-align: left; /* Align the content to the left */
-		      margin-top: 20px;
-		      padding: 15px;
-		      background: #ecf0f1;
-		      border-radius: 10px;
-		      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-		  }
+			.tasks-container {
+					margin-top: 20px; /* Adjust as needed */
+					padding: 15px;
+					background: #ecf0f1; /* Match this with your page's color scheme */
+					border-radius: 10px;
+					box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+					/* Other styles as needed */
+			}
+
+			/* Responsive adjustments */
+			@media screen and (max-width: 768px) {
+					.tasks-container {
+						  /* Adjust layout for mobile devices */
+					}
+			}
 
 		  .tasks-container label {
 		      display: inline-block;
@@ -255,6 +262,9 @@ let currentCategory = null;
 
 function loadRandomVideo(category, task = 'no_ann') {
     currentCategory = category; // Update the current category
+    // Clear any existing error message
+    const videoError = document.getElementById('videoError');
+    videoError.innerText = '';
     // Choose a random video from the category
     const videos = areas[category] || reasonings[category];
     const videoId = videos[Math.floor(Math.random() * videos.length)];
@@ -313,4 +323,3 @@ function loadRandomVideo(category, task = 'no_ann') {
 
 </body>
 </html>
-

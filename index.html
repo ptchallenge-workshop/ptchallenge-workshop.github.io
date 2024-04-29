@@ -95,14 +95,11 @@
     
     <section id="about">
              <h2 class="cta-title"><b>Overview</b></h2> 
-          
-            
-            <p>With the rise of large multimodal models (e.g. Flamingo, BeIT-3, GPT-4), integrated perception systems that can achieve human level scene understanding may be on the horizon. Making progress towards this ambitious goal requires robust and comprehensive evaluation benchmarks and strategies to reveal the strengths and weaknesses (including  biases) of these models and guide research. There are many benchmarks in the multimodal space that  have led to amazing progress in the field, but each one targets restricted aspects of perception: image benchmarks exclude temporal aspects; visual question-answering tends to focus mostly on image-level semantic understanding; object tracking tasks generally capture lower-level appearance of individual objects, like  colour  or  texture. Some important aspects are poorly covered (e.g. memory skills or Physics understanding). </p>
-            
-            <p>The proposed challenge-workshop aims to benchmark multimodal perception models by organising a competition around the Perception Test benchmark (<a href="https://www.deepmind.com/blog/measuring-perception-in-ai-models" target="_blank">blog</a>, <a href="https://github.com/deepmind/perception_test" target="_blank">github</a>). The Perception Test is a diagnostic benchmark created by DeepMind to counteract some of the limitations of existing benchmarks mentioned above by comprehensively probing the abilities of multimodal models across video, audio, and text modalities, in four skill areas (Memory, Abstraction, Physics, Semantics), four types of reasoning (descriptive, explanatory, predictive, counterfactual), and six computational tasks (multiple-choice video-QA, grounded video-QA, object tracking, point tracking, action localisation, sound localisation). The training and public test set were released in October 2022, and the held-out test set will be released together with the evaluation server for this competition.</p>
+            <p>This challenge-workshop aims to benchmark multimodal perception models by organising a competition around the Perception Test benchmark (<a href="https://www.deepmind.com/blog/measuring-perception-in-ai-models" target="_blank">blog</a>, <a href="https://github.com/deepmind/perception_test" target="_blank">github</a>). The Perception Test is a diagnostic benchmark created by DeepMind to counteract some of the limitations of existing benchmarks mentioned above by comprehensively probing the abilities of multimodal models across video, audio, and text modalities, in four skill areas (Memory, Abstraction, Physics, Semantics), four types of reasoning (descriptive, explanatory, predictive, counterfactual), and six computational tasks (multiple-choice video-QA, grounded video-QA, object tracking, point tracking, action localisation, sound localisation).</p>
             <p>You can try yourself the Perception Test <a href="https://docs.google.com/forms/d/e/1FAIpQLScp49reYMAByszH6vo_y6umlkBPwsua2-kMpGjff3IV0YzYkw/viewform?usp=sf_link" target="_blank"><b>here</b></a>. </p>
             <p>Check the <a href="https://github.com/deepmind/perception_test" target="_blank">Perception Test github repo</a> for details about the data and annotations format, baselines, and metrics.</p>
-            <p>Check the <a href="https://computerperception.github.io/" target="_blank">Computer Perception workshop at ECCV2022</a> for recorded talks and slides introducing the Perception Test benchmark.</p> 
+            <p>Check the <a href="https://computerperception.github.io/" target="_blank">Computer Perception workshop at ECCV2022</a> for recorded talks and slides introducing the Perception Test benchmark.</p>
+	    <p>Check the <a href="https://ptchallenge-workshop.github.io/challenge2023.html" target="_blank">First Perception Test challenge</a> for details of the previous challenge.</p>
           <!-- </div> -->
           </div>
         </div>
@@ -115,68 +112,16 @@
         <div class="row challenge-container">
       
          <div class="col-lg-12 content order-lg-9 order-2">
-         <h2 class="cta-title"><b>Challenge</b></h2> 
-          <!-- <h2 class="title"><b>Schedule</b></h2> -->
+         <h2 class="cta-title"><b>Challenge</b></h2>            
+           <p>Prizes totalling 15k EUR are available.</p>
 
-            <p class="cta-text"> We will host the first Perception Test challenge with the following tracks (Check the links to access the eval.ai challenges)</p>
-           <ul>
-             <li><a href="https://eval.ai/web/challenges/challenge-page/2094/overview">Single object tracking</a>
-               <li><a href="https://eval.ai/web/challenges/challenge-page/2108/overview">Single point tracking</a>
-                 <li><a href="https://eval.ai/web/challenges/challenge-page/2101/overview">Temporal action localisation</a>
-                   <li><a href="https://eval.ai/web/challenges/challenge-page/2109/overview">Temporal sound localisation</a>
-                     <li><a href="https://eval.ai/web/challenges/challenge-page/2091/overview">Multiple choice video question-answering</a>
-                       <li><a href="https://eval.ai/web/challenges/challenge-page/2110/overview">Grounded video question-answering</a>
-                         </ul>
-           
-           <p>Prizes totalling 15k EUR are available across all challenges.</p>
-
-<h4><b>The First Perception Test Challenge winners</b></h4>
-<p>We received 475 submissions from 63 teams across all six tracks. We awarded runner-up and best performance per track, plus 2 awards for most novel submissions across tracks.</p>
-<p><b>Single Object Tracking</b></p>
-		 <ul>
-	<li>Best performance: Team <b>X-Works</b> (Baojun Li, Jiamian Huang, Tao Liu) [<a href="https://drive.google.com/file/d/1QtDsWeCh6oQncE5ftmdM5tTE36dAPZ-q/view?usp=drive_link" target="_blank">report</a>]
-	<li>Runner-up: Team <b>sth</b> (Limin Wang, Gangshan Wu, Yutao Cui, Tianhui Song) [<a href="https://drive.google.com/file/d/1vVg8FJhoGVtDrkW0EP2vQpjAx_ReYu4Q/view?usp=sharing" target="_blank">report</a>]
-</ul>
-		 <p><b>Single Point Tracking</b></p>
-		 <ul>
-	<li>Best performance: Team <b>NJUST_KMG_Point</b> (Hongpeng Pan, Yang Yang, Zhongtian Fu, Yuxuan Zhang, Shian Du, Yi Xu, and Xiangyang Ji) [<a href="https://drive.google.com/file/d/1LcveS3PrFy6Cep8Nv07QI3IKaId2va9R/view?usp=sharing" target="_blank">report</a>] 
-		<li>Runner-up: Team <b>THETEAM</b> (Han Zang, Tianyang Xu, Xue-Feng Zhu, Xiao-Jun Wu, Josef Kittler) [<a href="https://drive.google.com/file/d/1mV3FfdMGJlC_0vkLRoz7UEJzO-tT5xnQ/view?usp=sharing" target="_blank">report</a>]
-		</ul>
-		 <p><b>Temporal Action Localisation</b></p>
-		 <ul>
-			<li>Best performance: Team <b>CTCV</b> (Xinmeng Zuo, Yuting Zhang, Ruijie Zhao, Jiang Liu and Hao Sun) [<a href="https://drive.google.com/file/d/12GoPdXsJPDBcZ9e3AkCAxQ61j2zyaK4-/view?usp=sharing" target="_blank">report</a>]
-		<li>Runner-up: Team <b>OpenGVLab</b> (Jiashuo Yu, Guo Chen, Yizhuo Li, Yali Wang, Limin Wang, Yu Qiao) [<a href="https://drive.google.com/file/d/1bk5iDeE8rIfCIbA6s0_Wgkhq8mFfc0D5/view?usp=sharing" target="_blank">report</a>]
-		</ul>
-		 <p><b>Temporal Sound Localisation</b></p>
-		 <ul>
-	<li>Best performance: Team <b>OpenGVLab</b> (Jiashuo Yu, Guo Chen, Yizhuo Li, Yali Wang, Limin Wang, Yu Qiao) [<a href="https://drive.google.com/file/d/1bk5iDeE8rIfCIbA6s0_Wgkhq8mFfc0D5/view?usp=sharing" target="_blank">report</a>]
-		<li>Runner-up: Team <b>NJUST_KMG</b> (Yurui Huang, Shuo Chen, Xinyan Wang, Yang Yang) [<a href="https://drive.google.com/file/d/1muIZSCol4DlGMOW8a8lRfNiQEQzQulP7/view?usp=sharing" target="_blank">report</a>]
-		</ul>
-		 <p><b>Multiple-Choice Video Question-Answering</b></p>
-		 <ul>
-			 <li>Best performance: Team <b>hsslab_inspur</b> (Baoyu Fan, Runze Zhang, Xiaochuan Li, Lu Liu, Li Wang, Zhenhua Guo, Yaqian Zhao, Rengang Li) [<a href="https://drive.google.com/file/d/1nK4j3dnM_fSQfiIxMJMsCat534FYZ5XC/view?usp=sharing" target="_blank">report</a>]
-			 <li>Runner-up: Team <b>TTgogogo</b> (Dongshuai Li, Chenglei Dai) [<a href="https://drive.google.com/file/d/1BVAbyjqo97WB4IrV1qYHFD6gKNh34eZJ/view?usp=sharing" target="_blank">report</a>]
-			 </ul>
-		 <p><b>Grounded Video Question-Answering</b></p>
-		 <ul>
-	<li>Best performance: Team <b>NJUST--KMG</b> (Hailiang Zhang, Dian Chao, Zhihao Guan, Weili Guo, Yang Yang) [<a href="https://drive.google.com/file/d/1uBmuE9kQRhFRWY57y0Tc48RM02kb9btA/view?usp=sharing" target="_blank">report</a>]
-		<li>Runner-up: Not awarded
-		</ul>
-		 <p><b>Most novel submissions</b></p>
-		 <ul>
-			 <li>  2nd place in Single Point Tracking: Team <b>THETEAM</b> (Han Zang, Tianyang Xu, Xue-Feng Zhu, Xiao-Jun Wu, Josef Kittler) [<a href="https://drive.google.com/file/d/1mV3FfdMGJlC_0vkLRoz7UEJzO-tT5xnQ/view?usp=drive_link" target="_blank">report</a>]
-		<li> 3rd place in Temporal Sound Localisation: Team <b>JNU_boat</b> (Linze Li, Rongchang Li, Tianyang Xu, Xiao-Jun Wu, Josef Kittler) [<a href="https://drive.google.com/file/d/1t5ORHnDElqLuQ5-u11NC3KtPhiPXCdLe/view?usp=sharing" target="_blank">report</a>]		
-</ul>
-
-		<p></p> 
-		 <p></p>
            <h4><b>Timeline</b></h4>
            <ul>
-             <li><b>June 15th - August 1st, 2023</b>: Challenge server goes live with data from the validation split 
-               <li><b> August 1st, 2023</b>: Held-out test split released 
-                 <li> <b> September 15th, 2023</b>: Deadline for submissions
-                   <li> <b> September 22nd, 2023 </b>: Winners announced
-                     <li><b>October 3rd, 2023</b>: Challenge-workshop at ICCV2023, Paris
+             <li><b>May 15th - June 15th, 2024</b>: Challenge server goes live with data from the validation split 
+               <li><b> End of June, 2024</b>: Held-out test split released 
+                 <li> <b> September 14th, 2024</b>: Deadline for submissions
+                   <li> <b> September 21st, 2024 </b>: Winners announced
+                     <li><b>Early October, 2024</b>: Challenge-workshop at ECCV2024, Milan
            </ul>
             </div>
          </div> 
@@ -223,8 +168,7 @@
                 <h4>Abhinav Gupta</h4>
                 <span>Carnegie Mellon University</span>
               <div class="text">
-               Professor at Carnegie Mellon University, former post-doctoral fellow working with Alyosha Efros and Martial Hebert.
-              </div>
+               Associate Professor at Carnegie Mellon University, focused on scaling up learning by building self-supervised, lifelong and interactivelearning systems. 
               </a>
             </div>
           </div>
@@ -238,8 +182,7 @@
                 <h4>Josh Tenenbaum</h4>
                 <span>MIT</span>
               <div class="text">
-               Professor at MIT, focusing on the computational basis of human cognition: learning concepts, judging similarity, inferring causal connections, forming perceptual representations, learning word meanings and syntactic principles in natural language, noticing coincidences and predicting the future, inferring the mental states of other people, and constructing intuitive theories of core domains, such as intuitive physics, psychology, biology, or social structure.
-              </div>
+               Professor at MIT, focusing on the computational basis of human cognition: learning concepts, judging similarity, inferring causal connections, forming perceptual representations, and more. 
               </a>
             </div>
           </div>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Second Perception Test Challenge - ECCV Workshop 2024</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/fav.png" rel="icon">
+  <link href="img/fav.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: Regna
+    Theme URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+  Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+<!--       <div class="pull-left">
+        <h1><a href="#hero">Perception Test</a></h1>
+      </div> -->
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li><a href="#about">Overview</a></li>
+          <li><a href="#challenge">Challenge</a></li>
+          <li><a href="#speakers">Speakers</a></li>
+          <li><a href="#organizers">Organizers</a></li>
+          <li><a href="https://ptchallenge-workshop.github.io/terms.html">Terms</a></li>
+          <li><a href="https://ptchallenge-workshop.github.io/explore.html">Dataset Explorer</a></li>
+          <li><a href="https://ptchallenge-workshop.github.io/challenge2023.html">Previous Challenges</a></li>
+          <li><a href="https://github.com/deepmind/perception_test"><i class="fa fa-github" style="font-size:28px"></i></a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+
+    <!--==========================
+      Hero Section
+    ============================-->
+    <section id="hero">
+      <div class="hero-container">
+        <h1>The Second Perception Test Challenge</h1>
+        <h2>Workshop at ECCV 2024</h2>
+        <!-- <a href="#about" class="btn-get-started">Get Started</a> -->
+      </div>
+    </section><!-- #hero -->
+
+
+    <!--==========================
+      About Us Section
+    ============================-->
+    <div class="container">
+      <div class="row about-container">
+        <!-- <div class="row justify-content-center"> -->
+
+        <div class="col-lg-12 content order-lg-9 order-2">
+          <div class="video-container">
+              <!-- Video 1 -->
+              <video controls autoplay muted loop id="videoId">
+                  <source src="media/vis.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+              <video controls autoplay muted loop id="videoId">
+                  <source src="media/vis_2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+          </div>
+    
+    <section id="about">
+             <h2 class="cta-title"><b>Overview</b></h2> 
+          
+            
+            <p>With the rise of large multimodal models (e.g. Flamingo, BeIT-3, GPT-4), integrated perception systems that can achieve human level scene understanding may be on the horizon. Making progress towards this ambitious goal requires robust and comprehensive evaluation benchmarks and strategies to reveal the strengths and weaknesses (including  biases) of these models and guide research. There are many benchmarks in the multimodal space that  have led to amazing progress in the field, but each one targets restricted aspects of perception: image benchmarks exclude temporal aspects; visual question-answering tends to focus mostly on image-level semantic understanding; object tracking tasks generally capture lower-level appearance of individual objects, like  colour  or  texture. Some important aspects are poorly covered (e.g. memory skills or Physics understanding). </p>
+            
+            <p>The proposed challenge-workshop aims to benchmark multimodal perception models by organising a competition around the Perception Test benchmark (<a href="https://www.deepmind.com/blog/measuring-perception-in-ai-models" target="_blank">blog</a>, <a href="https://github.com/deepmind/perception_test" target="_blank">github</a>). The Perception Test is a diagnostic benchmark created by DeepMind to counteract some of the limitations of existing benchmarks mentioned above by comprehensively probing the abilities of multimodal models across video, audio, and text modalities, in four skill areas (Memory, Abstraction, Physics, Semantics), four types of reasoning (descriptive, explanatory, predictive, counterfactual), and six computational tasks (multiple-choice video-QA, grounded video-QA, object tracking, point tracking, action localisation, sound localisation). The training and public test set were released in October 2022, and the held-out test set will be released together with the evaluation server for this competition.</p>
+            <p>You can try yourself the Perception Test <a href="https://docs.google.com/forms/d/e/1FAIpQLScp49reYMAByszH6vo_y6umlkBPwsua2-kMpGjff3IV0YzYkw/viewform?usp=sf_link" target="_blank"><b>here</b></a>. </p>
+            <p>Check the <a href="https://github.com/deepmind/perception_test" target="_blank">Perception Test github repo</a> for details about the data and annotations format, baselines, and metrics.</p>
+            <p>Check the <a href="https://computerperception.github.io/" target="_blank">Computer Perception workshop at ECCV2022</a> for recorded talks and slides introducing the Perception Test benchmark.</p> 
+          <!-- </div> -->
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
+    
+    <section id="challenge">
+      <div class="container">
+        <div class="row challenge-container">
+      
+         <div class="col-lg-12 content order-lg-9 order-2">
+         <h2 class="cta-title"><b>Challenge</b></h2> 
+          <!-- <h2 class="title"><b>Schedule</b></h2> -->
+
+            <p class="cta-text"> We will host the first Perception Test challenge with the following tracks (Check the links to access the eval.ai challenges)</p>
+           <ul>
+             <li><a href="https://eval.ai/web/challenges/challenge-page/2094/overview">Single object tracking</a>
+               <li><a href="https://eval.ai/web/challenges/challenge-page/2108/overview">Single point tracking</a>
+                 <li><a href="https://eval.ai/web/challenges/challenge-page/2101/overview">Temporal action localisation</a>
+                   <li><a href="https://eval.ai/web/challenges/challenge-page/2109/overview">Temporal sound localisation</a>
+                     <li><a href="https://eval.ai/web/challenges/challenge-page/2091/overview">Multiple choice video question-answering</a>
+                       <li><a href="https://eval.ai/web/challenges/challenge-page/2110/overview">Grounded video question-answering</a>
+                         </ul>
+           
+           <p>Prizes totalling 15k EUR are available across all challenges.</p>
+
+<h4><b>The First Perception Test Challenge winners</b></h4>
+<p>We received 475 submissions from 63 teams across all six tracks. We awarded runner-up and best performance per track, plus 2 awards for most novel submissions across tracks.</p>
+<p><b>Single Object Tracking</b></p>
+		 <ul>
+	<li>Best performance: Team <b>X-Works</b> (Baojun Li, Jiamian Huang, Tao Liu) [<a href="https://drive.google.com/file/d/1QtDsWeCh6oQncE5ftmdM5tTE36dAPZ-q/view?usp=drive_link" target="_blank">report</a>]
+	<li>Runner-up: Team <b>sth</b> (Limin Wang, Gangshan Wu, Yutao Cui, Tianhui Song) [<a href="https://drive.google.com/file/d/1vVg8FJhoGVtDrkW0EP2vQpjAx_ReYu4Q/view?usp=sharing" target="_blank">report</a>]
+</ul>
+		 <p><b>Single Point Tracking</b></p>
+		 <ul>
+	<li>Best performance: Team <b>NJUST_KMG_Point</b> (Hongpeng Pan, Yang Yang, Zhongtian Fu, Yuxuan Zhang, Shian Du, Yi Xu, and Xiangyang Ji) [<a href="https://drive.google.com/file/d/1LcveS3PrFy6Cep8Nv07QI3IKaId2va9R/view?usp=sharing" target="_blank">report</a>] 
+		<li>Runner-up: Team <b>THETEAM</b> (Han Zang, Tianyang Xu, Xue-Feng Zhu, Xiao-Jun Wu, Josef Kittler) [<a href="https://drive.google.com/file/d/1mV3FfdMGJlC_0vkLRoz7UEJzO-tT5xnQ/view?usp=sharing" target="_blank">report</a>]
+		</ul>
+		 <p><b>Temporal Action Localisation</b></p>
+		 <ul>
+			<li>Best performance: Team <b>CTCV</b> (Xinmeng Zuo, Yuting Zhang, Ruijie Zhao, Jiang Liu and Hao Sun) [<a href="https://drive.google.com/file/d/12GoPdXsJPDBcZ9e3AkCAxQ61j2zyaK4-/view?usp=sharing" target="_blank">report</a>]
+		<li>Runner-up: Team <b>OpenGVLab</b> (Jiashuo Yu, Guo Chen, Yizhuo Li, Yali Wang, Limin Wang, Yu Qiao) [<a href="https://drive.google.com/file/d/1bk5iDeE8rIfCIbA6s0_Wgkhq8mFfc0D5/view?usp=sharing" target="_blank">report</a>]
+		</ul>
+		 <p><b>Temporal Sound Localisation</b></p>
+		 <ul>
+	<li>Best performance: Team <b>OpenGVLab</b> (Jiashuo Yu, Guo Chen, Yizhuo Li, Yali Wang, Limin Wang, Yu Qiao) [<a href="https://drive.google.com/file/d/1bk5iDeE8rIfCIbA6s0_Wgkhq8mFfc0D5/view?usp=sharing" target="_blank">report</a>]
+		<li>Runner-up: Team <b>NJUST_KMG</b> (Yurui Huang, Shuo Chen, Xinyan Wang, Yang Yang) [<a href="https://drive.google.com/file/d/1muIZSCol4DlGMOW8a8lRfNiQEQzQulP7/view?usp=sharing" target="_blank">report</a>]
+		</ul>
+		 <p><b>Multiple-Choice Video Question-Answering</b></p>
+		 <ul>
+			 <li>Best performance: Team <b>hsslab_inspur</b> (Baoyu Fan, Runze Zhang, Xiaochuan Li, Lu Liu, Li Wang, Zhenhua Guo, Yaqian Zhao, Rengang Li) [<a href="https://drive.google.com/file/d/1nK4j3dnM_fSQfiIxMJMsCat534FYZ5XC/view?usp=sharing" target="_blank">report</a>]
+			 <li>Runner-up: Team <b>TTgogogo</b> (Dongshuai Li, Chenglei Dai) [<a href="https://drive.google.com/file/d/1BVAbyjqo97WB4IrV1qYHFD6gKNh34eZJ/view?usp=sharing" target="_blank">report</a>]
+			 </ul>
+		 <p><b>Grounded Video Question-Answering</b></p>
+		 <ul>
+	<li>Best performance: Team <b>NJUST--KMG</b> (Hailiang Zhang, Dian Chao, Zhihao Guan, Weili Guo, Yang Yang) [<a href="https://drive.google.com/file/d/1uBmuE9kQRhFRWY57y0Tc48RM02kb9btA/view?usp=sharing" target="_blank">report</a>]
+		<li>Runner-up: Not awarded
+		</ul>
+		 <p><b>Most novel submissions</b></p>
+		 <ul>
+			 <li>  2nd place in Single Point Tracking: Team <b>THETEAM</b> (Han Zang, Tianyang Xu, Xue-Feng Zhu, Xiao-Jun Wu, Josef Kittler) [<a href="https://drive.google.com/file/d/1mV3FfdMGJlC_0vkLRoz7UEJzO-tT5xnQ/view?usp=drive_link" target="_blank">report</a>]
+		<li> 3rd place in Temporal Sound Localisation: Team <b>JNU_boat</b> (Linze Li, Rongchang Li, Tianyang Xu, Xiao-Jun Wu, Josef Kittler) [<a href="https://drive.google.com/file/d/1t5ORHnDElqLuQ5-u11NC3KtPhiPXCdLe/view?usp=sharing" target="_blank">report</a>]		
+</ul>
+
+		<p></p> 
+		 <p></p>
+           <h4><b>Timeline</b></h4>
+           <ul>
+             <li><b>June 15th - August 1st, 2023</b>: Challenge server goes live with data from the validation split 
+               <li><b> August 1st, 2023</b>: Held-out test split released 
+                 <li> <b> September 15th, 2023</b>: Deadline for submissions
+                   <li> <b> September 22nd, 2023 </b>: Winners announced
+                     <li><b>October 3rd, 2023</b>: Challenge-workshop at ICCV2023, Paris
+           </ul>
+            </div>
+         </div> 
+      </div>
+    </section>
+      
+
+
+
+    <!--==========================
+      Speaker Section
+    ============================-->
+    <section id="team">
+      <div id="speakers" class="container wow fadeInUp">
+        <div class="section-header">
+          <h2 class="cta-title"><b>Workshop</b></h2> 
+          <p class="section-description"></p>
+        </div>
+
+
+				
+        <div>
+        <body>
+          <h4><b>Agenda</b></h4>
+          <ul>
+              <li>09:00 - 09:15 Welcome and introduction</li>
+              <li>09:15 - 09:45 Overview of Perception Test</li>
+              <li>09:45 - 10:15 Keynote: Abhinav Gupta</li>
+              <li>10:15 - 10:45 Coffee break</li>
+              <li>10:45 - 11:00 Challenges overview and winner announcement</li>
+              <li>11:00 - 11:45 Oral presentations from the challenge winners</li>
+              <li>11:45 - 12:15 Keynote: Josh Tenenbaum</li>
+              <li>12:15 - 13:00 Roundtable and closing notes</li>
+          </ul>
+        </div>
+        
+        <h4><b>Speakers</b></h4>
+        <div class="row" style="margin: auto;">
+          <div class="col-lg-3 col-md-6">
+           <div id="logo-holder">  
+           <div class="member">
+              <a href="https://www.cs.cmu.edu/~abhinavg/">
+                <div class="pic"><img src="img/speakers/abhinav.jpeg" alt=""></div>
+                <h4>Abhinav Gupta</h4>
+                <span>Carnegie Mellon University</span>
+              <div class="text">
+               Professor at Carnegie Mellon University, former post-doctoral fellow working with Alyosha Efros and Martial Hebert.
+              </div>
+              </a>
+            </div>
+          </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6">
+           <div id="logo-holder">  
+           <div class="member">
+              <a href="https://web.mit.edu/cocosci/josh.html">
+                <div class="pic"><img src="img/speakers/josh.jpeg" alt=""></div>
+                <h4>Josh Tenenbaum</h4>
+                <span>MIT</span>
+              <div class="text">
+               Professor at MIT, focusing on the computational basis of human cognition: learning concepts, judging similarity, inferring causal connections, forming perceptual representations, learning word meanings and syntactic principles in natural language, noticing coincidences and predicting the future, inferring the mental states of other people, and constructing intuitive theories of core domains, such as intuitive physics, psychology, biology, or social structure.
+              </div>
+              </a>
+            </div>
+          </div>
+          </div>
+
+      </div>
+    </section><!-- #speaker -->
+
+
+    <section id="team">
+
+      <div id="organizers" class="container wow fadeInUp">
+        <div class="section-header">
+          <h4><b>Organizers</b></h4>
+          <p class="section-description"></p>
+
+        </div>
+        
+       <div class="row">            
+            <div class="col-lg-3 col-md-6">
+            <div id="logo-holder">  
+            <div class="member">
+              <div class="pic"><img src="img/organizers/viorica.jpg" alt=""></div>
+              <h4>Viorica Pa&#774;tra&#774;ucean</h4>
+              <span>Deepmind</span>
+              <div class="text">
+                Research Scientist at DeepMind. <br><b> Research:</b> computer vision, scalable learning, biologically plausible learning.
+              </div>
+            </div>
+            </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+            <div id="logo-holder">  
+            <div class="member">
+              <div class="pic"><img src="img/organizers/joao.jpg" alt=""></div>
+              <h4>Joao Carreira</h4>
+              <span>Deepmind</span>
+              <div class="text">
+                Research Scientist at DeepMind. <br><b> Research:</b> video processing, general perception systems.
+              </div>
+            </div>
+            </div>
+            </div>
+
+    
+            
+            <div class="col-lg-3 col-md-6">
+            <div id="logo-holder">  
+            <div class="member">
+              <div class="pic"><img src="img/organizers/dima.jpg" alt=""></div>
+              <h4>Dima Damen</h4>
+              <span>Bristol University</span>
+              <div class="text">
+                Professor of Computer Vision. <br><b> Research:</b> computer vision, video understanding, perception benchmarks.
+              </div>
+            </div>
+            </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+            <div id="logo-holder">  
+            <div class="member">
+              <div class="pic"><img src="img/organizers/andrew.jpg" alt=""></div>
+              <h4>Andrew Zisserman</h4>
+              <span>University of Oxford</span>
+              <div class="text">
+                Professor of Computer Vision Engineering at Oxford and a Royal Society Research Professor. <br><b> Research:</b> computer vision, machine learning.
+              </div>
+            </div>
+            </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-6">
+            <div id="logo-holder">  
+            <div class="member">
+              <div class="pic"><img src="img/organizers/joe.jpg" alt=""></div>
+              <h4>Joe Heyward</h4>
+              <span>Deepmind</span>
+              <div class="text">
+                Research Engineer at Deepmind. <br><b> Research:</b> computer vision.
+              </div>
+            </div>
+            </div>
+            </div>
+       </div>
+
+      </div>
+    </section><!-- #team -->
+
+
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>SecondPerceptionTestChallenge</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!--
+          All the links in the footer should remain intact.
+          You can delete the links only if you purchased the pro version.
+          Licensing information: https://bootstrapmade.com/license/
+          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Regna
+        -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

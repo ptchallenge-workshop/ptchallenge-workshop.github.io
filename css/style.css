@@ -112,19 +112,25 @@ h1, h2, h3, h4, h5, h6 {
   transition: background 0.5s;
 }
 
-/*@media (max-width: 768px) {
-    bottom: 15px;
+@media (max-width: 768px) {
+  #header {
+    flex-direction: column; /* Stack header elements vertically */
+    align-items: center;     /* Center horizontally */
+  }
+  #header #logo {
+    margin-bottom: 10px; /* Add space between logo and menu */
+  }
+  #nav-menu-container {
+    display: block;    /* Show menu on smaller screens */
+    width: 100%;       /* Make menu full width */
+    text-align: center; /* Center menu items */
+  }
+  .nav-menu > li {
+    float: none;       /* Remove float from menu items */
+    margin: 5px 0;    /* Add space between menu items */
+  }
+  bottom: 15px;
   .back-to-top {
-  }
-} */
-
-@media (max-width: 900px) {
-  .title {
-    font-size: 24px; 
-    margin-bottom: 15px; /* Add space between title and menu */
-  }
-  .menu {
-    flex-direction: column; /* Stack menu items vertically */
   }
 }
 
@@ -177,14 +183,14 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   #header #logo h1 {
     font-size: 26px;
   }
   #header #logo img {
     max-height: 40px;
   }
-}
+}*/
 
 #header.header-fixed {
   background: rgba(52, 52, 52, 0.9);
@@ -235,12 +241,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #000000;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   #hero h1 {
     font-size: 28px;
     line-height: 36px;
   }
-}
+}*/
 
 #hero h2 {
   color: #000000;
@@ -248,12 +254,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 28px; /*24px;*/
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   #hero h2 {
     font-size: 18px;
     line-height: 24px;
   }
-}
+}*/
 
 #hero .btn-get-started {
   font-family: "Poppins", sans-serif;
@@ -340,11 +346,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   #nav-menu-container {
     display: none;
   }
-}
+}*/
 
 /* Nav Meu Styling */
 .nav-menu a {
@@ -568,11 +574,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 32px;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   #about .about-container .title {
     padding-top: 15px;
   }
-}
+}*/
 
 #about .about-container p {
   line-height: 26px;
@@ -736,13 +742,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
-@media (min-width: 769px) {
+/*@media (min-width: 769px) {
   #call-to-action .cta-btn-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
   }
-}
+}*/
 
 #call-to-action .cta-btn {
   font-family: "Poppins", sans-serif;
